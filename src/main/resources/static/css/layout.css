@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+a{
+    color: inherit;
+}
+.wrapper {
+    max-width: 100%;
+    overflow-x: auto; /* 창을 줄이면 가로 스크롤이 생기도록 설정 */
+}
+.logo {
+    display: flex; /* 인라인 블록으로 설정 */
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.logo-img {
+    background-image: url(/img/logo.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    display: inline-block; /* 인라인 블록으로 설정 */
+    margin-right: 10px; /* 로고와 텍스트 사이의 간격 조절 */
+}
+.logo>h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0; /* 기본 여백 제거 */
+}
+.header {
+    max-width: 1908px;
+    height: 189px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    
+}
+
+.header .header-2.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white; /* 배경색 추가 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 (선택 사항) */
+    width: 100%;
+    max-width: 1908px;
+}
+
+.line{
+    width: 100%;
+    border-bottom: 1.5px solid var(--sub-grey); /* 경계선을 아래쪽으로 변경 */
+}
+.header-1 {
+    height: 124px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    
+}
+
+
+.search-form {
+    width: 50%;
+    display: flex; /* 플렉스박스 사용으로 입력과 버튼을 가로로 배치 */
+    justify-content: center;
+}
+
+.search-form input {
+    flex: 1; /* 입력 필드가 가능한 모든 공간을 차지하도록 설정 */
+    padding: 10px; /* 입력 필드 안쪽 여백 */
+    border: 1px solid var(--sub-grey); /* 테두리 색상 */
+    border-radius: 10px 0 0 10px; /* 왼쪽 모서리만 둥글게 */
+    background-color: var(--sub-grey); /* 입력 필드 배경색 회색 */
+    font-size: 20px;
+    outline: none; /* 포커스 아웃라인 제거 */
+}
+
+.search-button {
+    background-color: var(--sub-grey); /* 버튼 배경색 */
+    padding: 10px; /* 버튼 안쪽 여백 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 0 10px 10px 0; /* 오른쪽 모서리만 둥글게 */
+    cursor: pointer; /* 클릭 가능 표시 */
+}
+
+.search-button i {
+    
+    font-size: 20px; /* 아이콘 크기 */
+}
+.login{
+    width: 200px;
+}
+.header-1>ul.login>li{
+    padding-left: 80px;
+}
+
+.header-2 {
+    max-width: 1908px; /* 헤더 상단과 같은 너비로 설정 */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 공간을 균등하게 분배 */
+    padding: 10px; /* 상하 패딩 추가 */
+    font-size: 20px;
+    vertical-align: middle;
+}
+.menu{
+    width: 200px;
+    display: flex;
+}
+.category {
+    width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    position: relative; /* 하위 요소의 절대 위치를 위해 필요 */
+    padding: 0px 100px 0px 100px;
+}
+
+.category-list {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 카테고리 항목 간격 추가 */
+    padding: 0px 100px 0px 100px;
+}
+
+.mymenu {
+    display: flex;
+   
+    width: 200px;
+}
+
+.mymenu > ul {
+    display: flex;
+    gap: 10px; /* 아이콘 간 간격 추가 */
+}
+
+.subcategory-list {
+    display: none; /* 기본적으로 숨김 */
+    position: absolute;
+    top: 100%; /* 부모 요소 아래에 위치 */
+    left: 0;
+    background-color: var(--white);
+    color: var(--grey);
+    border: 1px solid var(--sub-grey);
+    padding: 10px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    width: 100%;
+}
+
+.subcategory-list li {
+    margin: 5px 0;
+}
+
+.category-toggle:hover .subcategory-list {
+    display: block; /* 카테고리 항목을 호버할 때 서브 메뉴 표시 */
+}
+
+.category-toggle {
+    position: relative; /* 서브 카테고리를 위한 기준 설정 */
+}
+
+/* 추가 스타일 */
+.header ul li,
+.mymenu>ul>li>i {
+    cursor: pointer; /* 클릭 가능 항목에 커서 변경 */
+    padding: 10px; /* 클릭 가능 항목에 패딩 추가 */
+    transition: color 0.4s; /* 배경색 변화 애니메이션 */
+}
+
+.header ul li:hover,
+.mymenu>ul>li>i:hover {
+    color: var(--logo-brown); /* Hover 시 배경색 변경 */
+    
+}
+
+/*베너*/
+.banner{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 수평 가운데 정렬 */
+    flex-wrap: wrap;
+    width: 100%; /* 변경: 1903px에서 100%로 수정 */
+    max-width: 1903px; /* 최대 너비 설정 */
+    height: 754px;
+    background-color: var(--main-pink);
+    padding: 0px 200px;
+    
+    overflow-x: hidden;
+    
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}    
+.col-2 img{
+    display: flex;
+    max-width: 100%;
+    padding: 50px 50px;
+    justify-content: center;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0px;
+}
+.banner-btn{
+    display: inline-block;
+    background: var(--sub-pink);
+    color: var(--grey);
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+}
+/*메인*/
+.col-3{
+    display: block;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.col-4{
+    display: block;
+}
+
+
+.category ul.col-3>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; /* 각 아이템 간 간격 */
+}
+
+.category img {
+    max-width: 100px; /* 이미지 최대 크기 조정 */
+}
+
+.category a {
+    text-decoration: none;
+    color: inherit;
+    margin-top: 10px; /* 이미지와 텍스트 사이의 간격 */
+}
+
+/*푸터*/
+.footer-logo{
+    font-size: 24px;
+
+}
+footer {
+    width: 100%; /* 변경: 1903px에서 100%로 수정 */
+    max-width: 1903px; /* 최대 너비 설정 */
+    background-color: var(--main-pink);
+    padding-top: 50px; /* 푸터 안쪽 여백 */
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+}
+
+.footer-wrap {
+    display: flex; /* 플렉스박스 사용으로 내부 요소 배치 */
+    justify-content: space-between; /* 공간을 균등하게 배분 */
+    align-items: flex-start; /* 요소 상단 정렬 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.com-info {
+    flex: 1; /* 가능한 모든 공간을 차지 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.com-info .info-text {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.cs-center,
+.sns {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    flex: 0 0 auto; /* 고정 너비 */
+    margin-left: auto; /* 오른쪽으로 정렬 */
+    margin-right: 0; /* 오른쪽으로 정렬 */
+    padding: 20px;
+}
+
+.sns span {
+    display: block; /* SNS SERVICE 텍스트 블록 요소로 설정 */
+    margin-bottom: 10px; /* 텍스트와 아이콘 사이 간격 */
+}
+
+.sns i {
+    font-size: 24px; /* 아이콘 크기 */
+    margin-left: 10px; /* 아이콘 사이 간격 */
+}
