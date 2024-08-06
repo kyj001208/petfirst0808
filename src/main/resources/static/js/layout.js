@@ -1,31 +1,40 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const categoryToggle = document.querySelector('.category-toggle');
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryToggle = document.querySelector('.category > li:nth-child(2)'); // '카테고리' 항목 선택
 
-    categoryToggle.addEventListener('click', () => {
-        const subcategoryList = categoryToggle.querySelector('.subcategory-list');
-        if (subcategoryList.style.display === 'block') {
-            subcategoryList.style.display = 'none';
-        } else {
-            subcategoryList.style.display = 'block';
+    if (categoryToggle) { // 요소가 존재하는지 확인
+        categoryToggle.addEventListener('click', function(event) {
+            event.stopPropagation(); // 클릭 이벤트 전파 방지
+            const subcategoryList = this.querySelector('.subcategory-list');
+            if (subcategoryList) { // 서브 카테고리가 존재하는지 확인
+                if (subcategoryList.style.display === 'block') {
+                    subcategoryList.style.display = 'none'; // 서브 카테고리 숨김
+                } else {
+                    subcategoryList.style.display = 'block'; // 서브 카테고리 표시
+                }
+            }
+        });
+    }
+
+    // 클릭 외부 영역 클릭 시 서브 카테고리 숨김
+    document.addEventListener('click', function() {
+        if (categoryToggle) { // categoryToggle 요소가 존재하는지 확인
+            const subcategoryList = categoryToggle.querySelector('.subcategory-list');
+            if (subcategoryList) { // 서브 카테고리가 존재하는지 확인
+                subcategoryList.style.display = 'none'; // 서브 카테고리 숨김
+            }
         }
     });
 });
 
-window.addEventListener('scroll', () => {
-    const header2 = document.querySelector('.header .header-2');
-    if (window.scrollY > 80) {
-        header2.classList.add('active');
-    } else {
-        header2.classList.remove('active');
-    }
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const sticky = header.offsetTop; // 헤더의 초기 위치
 
-// 페이지 로드 시 스크롤 상태 확인
-window.addEventListener('load', () => {
-    const header2 = document.querySelector('.header .header-2');
-    if (window.scrollY > 80) {
-        header2.classList.add('active');
-    } else {
-        header2.classList.remove('active');
-    }
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add('sticky'); // 스크롤 시 헤더에 sticky 클래스 추가
+        } else {
+            header.classList.remove('sticky'); // 스크롤 시 헤더에 sticky 클래스 제거
+        }
+    });
 });

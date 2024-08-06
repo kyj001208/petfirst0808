@@ -1,0 +1,266 @@
+header {
+	background-color: var(--white);
+    width: 100%; /* 전체 화면 너비 사용 */
+    height: 160px;
+    border-bottom: solid 1px var(--sub-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 컨테이너를 가운데 정렬 */
+    position: relative; /* 기본 포지션 설정 */
+    transition: top 0.3s; /* 부드러운 애니메이션 효과 */
+}
+
+.sticky {
+    position: fixed; /* 스크롤 시 고정 */
+    top: 0; /* 상단에 고정 */
+    left: 0; /* 왼쪽 정렬 */
+    right: 0; /* 오른쪽 정렬 */
+    z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+i.logo-img {
+    background-image: url(/img/logo.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    display: inline-block; /* 인라인 블록으로 설정 */
+    margin-right: 10px; /* 로고와 텍스트 사이의 간격 조절 */
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+a.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 50px;
+    color: var(--grey);
+    font-weight: bold;
+    margin: 0; /* 기본 여백 제거 */
+}
+
+.loginwrap2{
+    display: inline-block;
+    width: 50px;
+}
+.loginwrap > a {
+	color: inherit;
+    display: inline-flex;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 1200px;
+    
+}
+
+.toolbar-top,
+.toolbar-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.icons {
+    font-size: 20px;
+    display: flex; /* Flexbox를 사용하여 요소들을 가로로 배치 */
+    gap: 20px; /* 아이콘들 사이의 간격 설정 */
+}
+
+.icons span {
+    display: flex; /* 아이콘이 flex 컨테이너 내에서 수직 가운데 정렬되도록 설정 */
+    align-items: center;
+}
+.search-form {
+    display: flex;
+}
+
+.category {
+    display: flex;
+}
+
+.category li {
+    margin-right: 20px;
+    font-size: 20px;
+}
+/*검색창*/
+.search-container {
+    flex: 1; /* 검색창을 유동적으로 만들기 위해 사용 */
+    display: flex;
+    justify-content: center; /* 검색창을 중앙에 배치 */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--sub-grey);
+    border-radius: 25px; /* 둥근 모서리 */
+    overflow: hidden; /* 둥근 모서리를 위해 필요 */
+    background-color: var(--white); /* 배경 색상 */
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 */
+    width: 300px; /* 검색창의 기본 너비 */
+}
+
+.search-form input {
+    border: none; /* 기본 테두리 제거 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    padding: 10px 15px; /* 내부 여백 */
+    flex-grow: 1; /* 검색창의 너비를 채우기 위해 사용 */
+    font-size: 14px; /* 폰트 크기 */
+    background-color: transparent; /* 배경 투명 */
+}
+
+.search-form .search-button {
+    background-color: var(--white); /* 버튼 배경색 */
+    padding: 10px 15px; /* 내부 여백 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* 마우스 커서 */
+}
+
+.search-form .search-button i {
+    color: #777777; /* 아이콘 색상 */
+    font-size: 20px; /* 아이콘 크기 */
+}
+
+.search-form:hover,
+.search-form:focus-within {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 */
+}
+
+/*버튼*/
+.image-button {
+    width: 220px;
+    height: 30px;
+    background-color: transparent;
+    border: solid 1px var(--grey);
+    border-radius: 50PX;
+    padding: 0;
+    cursor: pointer;
+}
+.image-button>img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+/* 서브카테고리 */
+.category > li {
+    position: relative; /* 자식 요소의 절대 위치를 위해 설정 */
+    margin-right: 20px; /* 항목 간 간격 */
+    cursor: pointer; /* 포인터 커서로 변경 */
+    
+}
+
+.subcategory-list {
+    display: none; /* 기본적으로 숨김 */
+    position: absolute;
+    top: 100%; /* 부모 요소 아래에 위치 */
+    left: 0;
+    background-color: var(--white);
+    color: var(--grey);
+    border: 1px solid var(--sub-grey);
+    padding: 10px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    width: 120px;
+    font-size: 10px;
+    line-height: 45px;
+}
+
+.subcategory-list>li>a {
+	
+    margin: 5px 0; /* 내부 여백 */
+    
+}
+
+.subcategory-list li a {
+    transition: color 0.3s; /* 글자 색 변화에 대한 전환 효과 */
+}
+
+.subcategory-list li a:hover {
+    color: var(--logo-brown); /* 호버 시 글자 색 변화 */
+}
+
+/* 카테고리 항목에 마우스를 올리면 서브 카테고리 표시 */
+.category-toggle:hover .subcategory-list {
+    display: block; /* 호버 시 서브 카테고리 표시 */
+}
+
+.category-toggle {
+    position: relative; /* 서브 카테고리를 위한 기준 설정 */
+}
+/* 추가 스타일 */
+.loginwrap>a:hover,
+.icons>span>i:hover,
+nav>ul>li>a:hover {
+    cursor: pointer; /* 클릭 가능 항목에 커서 변경 */
+    transition: color 0.4s; /* 배경색 변화 애니메이션 */
+}
+
+.loginwrap>a:hover,
+.icons>span>i:hover,
+nav>ul>li>a:hover {
+    color: var(--logo-brown); /* Hover 시 배경색 변경 */
+    
+}
+
+/*푸터*/
+.footer-logo{
+    font-size: 24px;
+
+}
+footer {
+    width: 100%; /* 변경: 1903px에서 100%로 수정 */
+    height: 300px;
+    max-width: 1903px; /* 최대 너비 설정 */
+    background-color: var(--main-pink);
+    padding-top: 50px; /* 푸터 안쪽 여백 */
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+}
+
+.footer-wrap {
+    display: flex; /* 플렉스박스 사용으로 내부 요소 배치 */
+    justify-content: space-between; /* 공간을 균등하게 배분 */
+    align-items: flex-start; /* 요소 상단 정렬 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.com-info {
+    flex: 1; /* 가능한 모든 공간을 차지 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.com-info .info-text {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.cs-center,
+.sns {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    flex: 0 0 auto; /* 고정 너비 */
+    margin-left: auto; /* 오른쪽으로 정렬 */
+    margin-right: 0; /* 오른쪽으로 정렬 */
+    padding: 20px;
+}
+
+.sns span {
+    display: block; /* SNS SERVICE 텍스트 블록 요소로 설정 */
+    margin-bottom: 10px; /* 텍스트와 아이콘 사이 간격 */
+}
+
+.sns i {
+    font-size: 24px; /* 아이콘 크기 */
+    margin-left: 10px; /* 아이콘 사이 간격 */
+}
