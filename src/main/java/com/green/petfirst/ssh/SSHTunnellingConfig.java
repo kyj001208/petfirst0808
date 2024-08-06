@@ -35,15 +35,6 @@ public class SSHTunnellingConfig {
 			DataSourceProperties dataSourceProperties,
 			SSHTunnellingProperties sshTunnellingProperties) throws JSchException {
 		
-		System.out.println("Private Key: " + sshTunnellingProperties.getPrivateKey());
-		System.out.println("Username: " + sshTunnellingProperties.getUsername());
-		System.out.println("SSH Host: " + sshTunnellingProperties.getSshHost());
-		System.out.println("SSH Port: " + sshTunnellingProperties.getSshPort());
-		System.out.println("RDS Host: " + sshTunnellingProperties.getRdsHost());
-		System.out.println("RDS Port: " + sshTunnellingProperties.getRdsPort());
-		System.out.println("DataSource URL: " + dataSourceProperties.getUrl());
-
-		
 		//System.out.println(">>>sshTunnellingProperties:"+sshTunnellingProperties);
 		//ec2-tunnelling
 		//Java로 작성된 SSH2 구현 라이브러리
