@@ -17,5 +17,9 @@ public class AdminController {
 		return "views/admin/product";
 	}
 	
+	@GetMapping("/admin/order")
+	public String order() {
+		return "views/admin/order";
+	}
 	
 }
