@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" 
-th:replace="~{views/admin/layout::layout(~{::head}, ~{::main})}">
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{views/admin/layout::layout(~{::head}, ~{::main})}">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/admin/petfir.css">
-    <title>상품등록</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/admin/product.css">
+<title>상품등록</title>
 </head>
-<main>
+<script>
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('imagePreview');
 
+            // Clear previous preview
+            preview.innerHTML = '';
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+<main>
+	<div class="container">
+		<h1>상품등록</h1>
+		<form action="/submit" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<th class="tag">상품명</th>
+					<td><input class="pdtName" type="text" name="productName" required></td>
+				</tr>
+				<tr>
+					<th class="tag">판매가</th>
+					<td><input class="price" type="text" name="price" required> 원</td>
+				</tr>
+				<tr>
+					<th class="tag">분류</th>
+					<td><input type="text" name="category" required></td>
+				</tr>
+				<tr>
+					<th class="tag">상품수량</th>
+					<td><input class="quantity" type="text" name="quantity" required></td>
+				</tr>
+				<tr>
+					<th class="tag">상품설명</th>
+					<td><textarea class="des" name="description" rows="5" required></textarea></td>
+				</tr>
+				<tr>
+					<th class="tag">이미지</th>
+                    <td>
+                        <input type="file" id="imageInput" name="image" accept="image/*" required>
+                        <div class="profile-pic-container">
+                        <img id="profilePic" src="/images/hrm/profile.png" alt="프로필 사진"
+                             onclick="document.getElementById('empProfilePic').click();">
+                        <input type="file" id="empProfilePic" class="box"
+                               name="empProfilePic" accept="image/*" style="display: none;"
+                               onchange="previewProfilePic(event)">
+                    </div>
+                    </td>
+				</tr>
+			</table>
+			<div class="form-buttons">
+				<button type="submit">상품등록</button>
+				<button type="reset">취소</button>
+			</div>
+		</form>
+	</div>
 </main>
 </html>
