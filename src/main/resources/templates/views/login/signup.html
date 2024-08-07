@@ -6,6 +6,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/login/signup.css" />
 <link rel="stylesheet" href="/css/commons/common.css" />
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="/js/login/singup.js"></script>
 </head>
 <body>
 	<main>
@@ -28,7 +30,7 @@
 						
 						<div class="userpass">
 						<label for="password">비밀번호</label>
-						<input id="password" type="password" name="password" placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자))" >
+						<input id="password" type="password" name="password" placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)" >
 						</div>
 						
 						<div class="userpass1">
@@ -42,9 +44,15 @@
 						</div>
 						
 						<div class="useradress">
+						
 						<label for="useradress">주소</label>
-						<input id="useradress" type="text" name="useradress" placeholder="주소" ><button>우편번호</button><br>
-						<input id="useradress_detail" type="text" name="useradress_detail" placeholder="상세주소" ><br>
+						<input type="text" id="sample6_postcode" placeholder="우편번호" >
+						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="adressbtn"><br>
+						<input type="text" id="sample6_address" placeholder="주소"><br>
+						<input type="text" id="sample6_extraAddress" placeholder="참고사항">
+						<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+						
+						
 						</div>
 						
 						<div class="usernumber">
