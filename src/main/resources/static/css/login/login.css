@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 
 .login{
 	
@@ -49,7 +50,7 @@
 	
 	border: none;
 	height: 30px;
-	font-family: "Dongle", sans-serif;
+	font-family: "Hi Melody", sans-serif;
 	font-size: 20px;
 	
 }
@@ -65,11 +66,12 @@
 	background-color: var(--sub-pink);
 	width: 200px;
 	height: 30px;
-	font-family: "Dongle", sans-serif;
-	font-size: 20px;
+	font-family: "Hi Melody", sans-serif;
+	
 	border-radius: 1em ;
 	border: 1px;
 	margin-bottom: 5px;
+	color: var(--grey);
 	
 }
 
