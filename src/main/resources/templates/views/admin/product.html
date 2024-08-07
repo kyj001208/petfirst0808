@@ -6,25 +6,7 @@
 <link rel="stylesheet" href="/css/admin/product.css">
 <title>상품등록</title>
 </head>
-<script>
-        document.getElementById('imageInput').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const preview = document.getElementById('imagePreview');
 
-            // Clear previous preview
-            preview.innerHTML = '';
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 <main>
 	<div class="container">
 		<h1>상품등록</h1>
@@ -52,16 +34,20 @@
 				</tr>
 				<tr>
 					<th class="tag">이미지</th>
-                    <td>
-                        <input type="file" id="imageInput" name="image" accept="image/*" required>
-                        <div class="profile-pic-container">
-                        <img id="profilePic" src="/images/hrm/profile.png" alt="프로필 사진"
-                             onclick="document.getElementById('empProfilePic').click();">
-                        <input type="file" id="empProfilePic" class="box"
-                               name="empProfilePic" accept="image/*" style="display: none;"
-                               onchange="previewProfilePic(event)">
-                    </div>
-                    </td>
+					<td>
+						<label class="fileUpload">
+							<input type="file" id="itemFile" onchange="fileupload(this)" style="display: none;">
+							<span>+</span>
+						</label> 
+						<label class="detail1">
+							<input type="file" id="itemFile" onchange="fileupload(this)" style="display: none;">
+							<span>+</span>
+						</label> 
+						<label class="detail2">
+							<input type="file" id="itemFile" onchange="fileupload(this)" style="display: none;">
+							<span>+</span>
+						</label> 
+					</td>
 				</tr>
 			</table>
 			<div class="form-buttons">
