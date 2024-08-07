@@ -14,7 +14,7 @@
 .signup-menu{
 	
 	border-radius: 1em;
-	max-width: 800px;
+	max-width: 1000px;
 	width: 100%;
 	border: 1px solid var(--sub-grey);
 	padding-bottom: 5px;
@@ -27,6 +27,11 @@
 .login-input{
 	
 	padding-left: 150px;
+}
+
+.login-input>div{
+	
+	padding-bottom: 10px;
 }
 
 .signup_top{
@@ -52,6 +57,7 @@
 	font-family: "Hi Melody", sans-serif;
 	font-size: 20px;
 	font-weight: 600;
+	padding-bottom: 10px;
 }
 
 .userid > label{
@@ -61,11 +67,22 @@
 	font-size: 20px;
 }
 
-#userid, #password, #password_1, #username, #useradress,#useradress_detail, #usernumber, #useremail, #petname, #petbreed{
+#userid, #password, #password_1, #username, #useradress, #sample6_address, #sample6_detailAddress,
+#sample6_extraAddress, #usernumber, #useremail, #petname, #petbreed{
 	
 	font-family: "Hi Melody", sans-serif;
-	width: 300px;
+	width: 400px;
 	border: 1px solid var(--sub-grey);
+	font-size: 18px;
+	
+}
+
+#sample6_postcode{
+	
+	font-family: "Hi Melody", sans-serif;
+	width: 150px;
+	border: 1px solid var(--sub-grey);
+	font-size: 18px;
 	
 }
 
@@ -103,19 +120,19 @@
 	width: 150px;
 	font-size: 20px;
 }
-.useradress > button{
+#adressbtn{
 	
 	margin-left: 20px;
-	 border: none;
-	 width: 80px;
-	 background-color: var(--sub-pink);
-	 font-family: "Hi Melody", sans-serif;
+	border: none;
+	width: 100px;
+	background-color: var(--sub-pink);
+	font-family: "Hi Melody", sans-serif;
 	font-size: 16px;
 	border-radius: 1em;
 	color: var(--grey);
 }
 
-#useradress_detail{
+#sample6_address, #sample6_detailAddress, #sample6_extraAddress{
 	
 	margin-left: 153px;
 }
