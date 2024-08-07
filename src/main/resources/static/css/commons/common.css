@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 
+*{box-sizing:border-box;}
 :root{
     --main-pink:#F9F3EC;
     --sub-pink:#F7EEE4;
